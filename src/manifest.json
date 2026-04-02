@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "KUS Creator Suite",
+  "short_name": "KUS Suite",
+  "version": "0.1.0",
+  "description": "Herramientas para creadores: analytics, editor de miniaturas, SEO de videos, traductor integrado y m\u00e1s. Plan Influencer incluye VidIQ-like features.",
+  "author": "EstacionKUS Medios",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    },
+    "default_title": "KUS Creator Suite"
+  },
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["src/content/youtube.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.tiktok.com/*"],
+      "js": ["src/content/tiktok.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://kick.com/*"],
+      "js": ["src/content/kick.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://www.tiktok.com/*",
+    "https://kick.com/*",
+    "https://www.instagram.com/*"
+  ],
+  "side_panel": {
+    "default_path": "src/panel/panel.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["src/thumbnail-editor/editor.html", "src/panel/panel.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

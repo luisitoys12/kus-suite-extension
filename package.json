@@ -1,0 +1,15 @@
+{
+  "name": "kus-suite-extension",
+  "version": "0.1.0",
+  "description": "KUS Creator Suite — Extensión Chrome/Firefox para creadores",
+  "scripts": {
+    "build": "echo 'Add esbuild/rollup for production build'",
+    "dev": "echo 'Load src/ directly in Chrome developer mode'",
+    "lint": "eslint src/**/*.js",
+    "zip:chrome": "cd src && zip -r ../dist/kus-suite-chrome.zip . && echo 'Chrome package ready'",
+    "zip:firefox": "cd src && zip -r ../dist/kus-suite-firefox.zip . && echo 'Firefox package ready'"
+  },
+  "keywords": ["chrome-extension", "firefox-extension", "youtube-analytics", "creator-tools", "kus"],
+  "author": "EstacionKUS Medios",
+  "license": "UNLICENSED"
+}

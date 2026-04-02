@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KUS Creator Suite</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<div class="popup">
+  <header class="popup-header">
+    <div class="brand">
+      <svg width="28" height="28" viewBox="0 0 36 36" fill="none">
+        <rect width="36" height="36" rx="8" fill="#01696f"/>
+        <text x="18" y="25" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="18" fill="white">K</text>
+      </svg>
+      <div>
+        <div class="brand-name">KUS <span>Suite</span></div>
+        <div class="brand-plan" id="planBadge">Free</div>
+      </div>
+    </div>
+    <button class="theme-btn" id="themeToggle" title="Cambiar tema">🌙</button>
+  </header>
+
+  <nav class="popup-tabs">
+    <button class="tab active" data-tab="home">🏠 Inicio</button>
+    <button class="tab" data-tab="youtube">🎥 YouTube</button>
+    <button class="tab" data-tab="tools">🛠️ Herramientas</button>
+    <button class="tab" data-tab="license">🔑 Licencia</button>
+  </nav>
+
+  <div class="tab-content" id="tab-home">
+    <div class="status-card">
+      <div class="status-icon" id="statusIcon">✅</div>
+      <div>
+        <div class="status-title">KUS Suite activo</div>
+        <div class="status-sub" id="statusSub">Cargando plan...</div>
+      </div>
+    </div>
+    <div class="quick-actions">
+      <button class="action-btn" id="openPanel">📊 Abrir panel lateral</button>
+      <button class="action-btn" id="openTranslator">🌐 Traductor</button>
+    </div>
+    <div class="upgrade-banner" id="upgradeBanner" style="display:none">
+      <p>⭐ Desbloquea todas las funciones con el plan <strong>Influencer</strong></p>
+      <a href="https://luisitoys12.github.io/kus-license-panel/#planes" target="_blank" class="upgrade-link">Ver planes →</a>
+    </div>
+  </div>
+
+  <div class="tab-content hidden" id="tab-youtube">
+    <div class="section-title">🎥 Analytics YouTube</div>
+    <div class="locked-feature" id="ytAnalytics">
+      <div class="feature-row">
+        <span>Vistas estimadas hoy</span><span class="val" id="ytViews">—</span>
+      </div>
+      <div class="feature-row">
+        <span>Score SEO del video</span><span class="val" id="ytSeo">—</span>
+      </div>
+      <div class="feature-row">
+        <span>Keywords top</span><span class="val" id="ytKeywords">—</span>
+      </div>
+      <div class="feature-row">
+        <span>Sugerencias de tags</span><span class="val" id="ytTags">—</span>
+      </div>
+    </div>
+    <div class="lock-overlay" id="ytLock">
+      <span>🔒 Plan Creator o superior</span>
+      <a href="https://luisitoys12.github.io/kus-license-panel" target="_blank" class="upgrade-link">Activar →</a>
+    </div>
+  </div>
+
+  <div class="tab-content hidden" id="tab-tools">
+    <div class="section-title">🛠️ Herramientas</div>
+    <button class="tool-btn" id="openThumbnailEditor">🖼️ Editor de miniaturas <span class="plan-tag influencer">⭐ Influencer</span></button>
+    <button class="tool-btn" id="openCompetitor">🔍 Analizar competidor <span class="plan-tag influencer">⭐ Influencer</span></button>
+    <button class="tool-btn" id="openMultiplatform">🌐 Multi-plataforma <span class="plan-tag influencer">⭐ Influencer</span></button>
+    <button class="tool-btn" id="openTranslatorTool">💬 Traductor (Open Source) <span class="plan-tag free">GRATIS</span></button>
+  </div>
+
+  <div class="tab-content hidden" id="tab-license">
+    <div class="section-title">🔑 Activar licencia</div>
+    <div class="form-group">
+      <label>Token de activación</label>
+      <textarea id="tokenInput" placeholder="KUS.eyJ..." rows="4"></textarea>
+    </div>
+    <button class="action-btn primary" id="activateBtn">Activar licencia</button>
+    <div class="result" id="activateResult"></div>
+    <div class="license-links">
+      <a href="https://luisitoys12.github.io/kus-license-panel" target="_blank">🛒 Comprar plan</a>
+      <a href="https://luisitoys12.github.io/kus-license-panel/#activar" target="_blank">🔑 Generar token</a>
+    </div>
+  </div>
+
+  <footer class="popup-footer">
+    KUS Creator Suite v0.1.0 — <a href="https://github.com/luisitoys12/kus-suite-extension" target="_blank">GitHub</a>
+  </footer>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>
